@@ -1,0 +1,26 @@
+# hello-world.yml
+# Assuming this is being run locally with Ansible already setup and running this as root. Otherwise, uncomment sudo line.
+# Additional assumption that I used CentOS instead of AWS AMI. Tested on Linode.
+# I used C because my Bash and Python apps were really boring to work with. I wouldn't generally add gcc to a prod machine but without a build/deploy (Jenkins) server, it was the best option.
+# Also assuming EPEL is installed for Ansible already.
+
+- hosts: localhost
+  connection: local
+  gather_facts: False
+# sudo: yes
+
+
+  tasks:
+  - name: Setup base
+    yum: name=python-pip state=latest
+    # Install gcc to complicate/compromise the build a bit
+    yum: name=gcc state=latest
+
+  - name: Check if hello exists
+    stat: path=/root/hello
+    register: stat_result
+
+  - name: Compile if it doesn't
+    command: gcc -o hello hello.c
+    when: stat_result.stat.exists == False   
+
