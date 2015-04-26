@@ -1,4 +1,4 @@
-  # hello-world.yml
+# hello-scaling.yml
   
 ---
 # Based heavily on the Ansible documentation on EC2:
