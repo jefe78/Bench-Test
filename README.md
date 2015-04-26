@@ -7,3 +7,5 @@ I would have liked to have continued with the bonus section but didn't have an A
 I chose C because I haven't used it in a long time and my Bash & Python apps were too boring/simple to deploy.
 
 Also, I was not clear on the purpose behind different repositories for the app and the playbook. If that is a requirement, I'm happy to break this out into two separate repositories.
+
+hello-world.yml is the primary, working state. I was playing around with scaling in the *scaling* playbooks but they're in an incomplete state at the moment.
