@@ -1,4 +1,4 @@
-# hello-scaling.yml
+  # hello-scaling.yml
   
 ---
 # Based heavily on the Ansible documentation on EC2:
@@ -38,7 +38,7 @@
         yum: name=git state=latest
 
       - name: Giter'
-        git: repo=git@github.com:jefe78/Bench-Test.git dest=/home/ec2-user/hello dest='/home/ec2-user' accept_hostkey:yes
+        git: repo=https://github.com/jefe78/Bench-Test.git dest=/home/ec2-user/hello
 
       # Install gcc to complicate/compromise the build a bit
       - name: Install gcc  
